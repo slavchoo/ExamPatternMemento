@@ -9,7 +9,7 @@ public class GameState implements IDraw {
     private int[][] cells;
 	private int moves;
 	
-	private final int AREA_SIZE = 9;
+	public static final int AREA_SIZE = 9;
 
     public GameState( ) {
         cells = new int[AREA_SIZE][AREA_SIZE];

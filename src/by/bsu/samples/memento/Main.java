@@ -27,9 +27,9 @@ public class Main {
             switch(b[0]){
                 case '1':
                     int x,y,nmbr;
-                    x = java.lang.Math.abs( rnd.nextInt()%9 );
-                    y = java.lang.Math.abs( rnd.nextInt()%9 );
-                    nmbr =java.lang.Math.abs( rnd.nextInt()%9 + 1 );
+                    x = java.lang.Math.abs( rnd.nextInt() % GameState.AREA_SIZE);
+                    y = java.lang.Math.abs( rnd.nextInt() % GameState.AREA_SIZE);
+                    nmbr =java.lang.Math.abs( rnd.nextInt()% GameState.AREA_SIZE + 1 );
                     controller.addElement(x, y, nmbr);
                     System.out.printf("%d added at (%d,%d)\n",nmbr,x,y);
                     gamestate.draw();

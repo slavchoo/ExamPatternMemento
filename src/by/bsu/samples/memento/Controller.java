@@ -15,26 +15,28 @@ public class Controller {
         redostates = new Stack<GameState.Memento>();
     }
 
-    public void addElement ( Integer x, Integer y, Integer nmbr ) {
+    public void addElement ( int x, int y, int nmbr ) {
 //...
         undostates.push( currentstate.createMemento( ) );
         currentstate.setElement(x, y, nmbr);
-	redostates.clear();
+		redostates.clear();
 //...
     }
+	
     public void undo() {
-        if( !( undostates.isEmpty( ) ) )
+        if(!undostates.isEmpty())
         {
-            redostates.push( currentstate.createMemento( ) );
+            redostates.push( currentstate.createMemento() );
             currentstate.setMemento( undostates.pop() );
         }
     }
+	
     public void redo() {
-    if( !( redostates.isEmpty( ) ) )
-    {
-        undostates.push( currentstate.createMemento( ) );
-        currentstate.setMemento( redostates.pop() );
-    }
+		if(!redostates.isEmpty())
+		{
+			undostates.push( currentstate.createMemento() );
+			currentstate.setMemento( redostates.pop() );
+		}
     }
 //...
 }
